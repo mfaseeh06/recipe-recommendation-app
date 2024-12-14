@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Recommendation App</title>
+    <script>
+      // Prevent flash of wrong theme
+      if (localStorage.getItem('theme-storage') !== null) {
+        const themeStorage = JSON.parse(localStorage.getItem('theme-storage'));
+        if (themeStorage.state.isDark) {
+          document.documentElement.classList.add('dark');
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
